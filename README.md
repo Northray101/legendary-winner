@@ -1,35 +1,39 @@
-# Legendary Winner
+# Legendary Winner Chat
 
-A lightweight static website scaffold ready for customization.
-
-## Project structure
-
-```
-├── assets/
-├── index.html
-├── package.json
-├── scripts/
-│   └── main.js
-└── styles/
-    └── main.css
-```
-
-- **index.html** – Main HTML document featuring a hero section, feature list, and contact form.
-- **styles/main.css** – Global stylesheet with responsive layout and accessible color palette.
-- **scripts/main.js** – Small JavaScript helper that updates the footer year and adds a form handler.
-- **assets/** – Place any static assets (images, fonts, icons) you add to the site.
+A minimal web-based chat client for experimenting with [Google AI Studio](https://aistudio.google.com/) models. The interface keeps the conversation history in the browser and lets you render Gemini responses with Markdown.
 
 ## Getting started
 
-1. Install dependencies (none required for the base scaffold).
-2. Launch a local development server:
+1. Install dependencies (only needed if you want to use the optional local dev server):
+
+   ```bash
+   npm install
+   ```
+
+2. Start a local static server:
 
    ```bash
    npm run dev
    ```
 
-   This uses [`http-server`](https://www.npmjs.com/package/http-server) via `npx` to host the site at `http://localhost:4173`.
+3. Open the site in your browser. You will be prompted to supply a Google AI Studio API key before you can start chatting.
 
-3. Open `index.html` in your browser to preview and iterate.
+## Usage
 
-Feel free to adapt this structure to match your preferred tooling or front-end framework.
+1. In Google AI Studio, create an API key with access to the Gemini model you want to use.
+2. Paste the key into the **API key** form at the top of the page.
+3. Type a prompt in the message box and send it. The conversation history is persisted in-memory for the current session so each request includes the full context.
+4. Responses are rendered as Markdown. Links open in a new tab.
+
+> **Security note**: Keys are only stored in memory in your browser session. Refreshing the page clears the key and the conversation history.
+
+## Project structure
+
+- `index.html` – Base markup, forms, and chat layout.
+- `styles/main.css` – Styling for the chat client.
+- `scripts/main.js` – Client-side logic for handling API key management, message flow, and Gemini API requests.
+- `package.json` – Development server script shortcut.
+
+## License
+
+MIT
