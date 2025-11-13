@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Legendary Winner · Gemini Chat</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Legendary Winner · Gemini Chat</h1>
+        <p class="tagline">
+          Start a conversation with Google Gemini through the AI Studio API. Provide
+          your API key to begin chatting.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel" aria-labelledby="api-key-title">
+        <div class="panel__header">
+          <h2 id="api-key-title">API access</h2>
+          <p class="status" id="api-status" role="status">No API key provided</p>
+        </div>
+        <form id="api-key-form" class="form-row">
+          <label class="visually-hidden" for="api-key-input">Google AI Studio API key</label>
+          <input
+            id="api-key-input"
+            name="apiKey"
+            type="password"
+            autocomplete="off"
+            placeholder="Paste your Google AI Studio API key"
+            required
+          />
+          <button type="submit">Save key</button>
+        </form>
+        <p class="helper-text">
+          Keys are stored only in this browser session and never leave your device
+          except when sending requests directly to Google.
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="chat-title">
+        <div class="panel__header">
+          <h2 id="chat-title">Conversation</h2>
+        </div>
+        <div id="chat-log" class="chat-log" aria-live="polite" aria-busy="false"></div>
+        <form id="message-form" class="message-form" autocomplete="off">
+          <label class="visually-hidden" for="message-input">Your message</label>
+          <textarea
+            id="message-input"
+            name="message"
+            rows="2"
+            placeholder="Ask the model anything..."
+            required
+            disabled
+          ></textarea>
+          <div class="form-row form-row--compact">
+            <button type="submit" id="send-button" disabled>Send</button>
+            <span class="helper-text" id="form-helper">Enter an API key to enable chat.</span>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Built for experimenting with Gemini via Google AI Studio. Sessions reset on refresh.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.1/marked.min.js" defer></script>
+    <script src="scripts/main.js" type="module"></script>
+  </body>
+</html>
