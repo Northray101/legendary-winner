@@ -1,0 +1,13 @@
+{
+  "name": "legendary-winner",
+  "version": "1.0.0",
+  "description": "Starter static site scaffold for the Legendary Winner project.",
+  "private": true,
+  "scripts": {
+    "dev": "npx http-server . -c-1 -a 0.0.0.0 -p 4173",
+    "start": "npm run dev"
+  },
+  "keywords": ["static-site", "starter", "legendary-winner"],
+  "author": "",
+  "license": "MIT"
+}
